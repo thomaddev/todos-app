@@ -10,7 +10,6 @@ interface MyProps {
   task: TodoInterface;
 }
 export default function Task(props: MyProps) {
-  console.log(process.env.REACT_APP_API_PATH)
   const { getTasks, removeTask, toggleTask, updateTask, dispatch, state } =
     useTodo();
   const { title, completed, id } = props.task;
