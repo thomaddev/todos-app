@@ -1,0 +1,31 @@
+.task-box {
+  display: flex;
+  align-items: center;
+  border-radius: 9999px;
+  background: #FFF;
+  padding: 14px 20px;
+  min-height: 46px;
+  input {
+    flex: 1;
+  }
+  p {
+    flex: 2;
+    margin: 0;
+    color: #2E2E2E;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .tools {
+    flex: 1;
+    max-width: 40px;
+  }
+
+  &.completed {
+    p {
+      color: #A9A9A9;
+      text-decoration: line-through
+    }
+  }
+}

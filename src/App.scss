@@ -1,0 +1,54 @@
+
+@import 'variables'; // Import the _variables.scss file
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  @media screen and (max-width: $small-screen) {
+    body {
+      font-size: 14px;
+    }
+  }
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  background: #F5F5F5;
+  width: 45rem;
+  min-height: 75vh;
+  max-height: 75vh;
+  flex-shrink: 0;
+  border-radius: 1.25rem;
+  padding: 10px;
+  row-gap: 10px;
+  @media screen and (max-width: $small-screen) {
+    width: 90%;
+    height: 90%;
+    max-height: 100%;
+  }
+  @media screen and (max-width: $medium-screen) {
+    height: 70%;
+    max-height: 100%;
+  }
+}
+
+.todos-lists {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  flex: 1;
+}
+
+h1 {
+  color: #000;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+
+
