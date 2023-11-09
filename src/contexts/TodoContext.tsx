@@ -1,11 +1,7 @@
 import React, { createContext, useReducer, useContext, ReactNode } from 'react';
 import { TodoInterface } from '../interfaces/todo.interface';
 import axios from 'axios';
-import {
-  FILTER_DONE,
-  FILTER_UNDONE,
-  FilterType,
-} from '../constant';
+import { FILTER_DONE, FILTER_UNDONE, FilterType } from '../constant';
 
 interface State {
   originalTodos: TodoInterface[];
@@ -92,7 +88,7 @@ const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
 
   async function getTasks() {
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_PATH}/todos`);
+      const response = await axios.get(`http://localhost:3001/todos`);
       const todos = response.data;
       dispatch({ type: 'GET_TODOS', payload: todos });
     } catch (error) {
@@ -102,7 +98,7 @@ const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
 
   async function addTask(task: TodoInterface) {
     try {
-      await axios.post(`${process.env.REACT_APP_API_PATH}/todos`, {
+      await axios.post(`http://localhost:3001/todos`, {
         ...task,
       });
       dispatch({ type: 'RESET_TODO' });
@@ -113,7 +109,7 @@ const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
 
   async function removeTask(id: string) {
     try {
-      await axios.delete(`${process.env.REACT_APP_API_PATH}/todos/${id}`);
+      await axios.delete(`http://localhost:3001/todos/${id}`);
       dispatch({ type: 'RESET_TODO' });
     } catch (error) {
       console.error('Error fetching todos:', error);
@@ -122,7 +118,7 @@ const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
 
   async function toggleTask(id: string, completed: boolean) {
     try {
-      await axios.patch(`${process.env.REACT_APP_API_PATH}/todos/${id}`, {
+      await axios.patch(`http://localhost:3001/todos/${id}`, {
         completed,
       });
       dispatch({ type: 'RESET_TODO' });
@@ -133,7 +129,7 @@ const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
 
   async function updateTask(task: TodoInterface) {
     try {
-      await axios.patch(`${process.env.REACT_APP_API_PATH}/todos/${task.id}`, {
+      await axios.patch(`http://localhost:3001/todos/${task.id}`, {
         title: task.title,
         completed: task.completed,
       });
