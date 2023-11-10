@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useContext, ReactNode } from 'react';
+import { createContext, useReducer, useContext, ReactNode } from 'react';
 import { TodoInterface } from '../interfaces/todo.interface';
 import axios from 'axios';
 import { FILTER_DONE, FILTER_UNDONE, FilterType } from '../constant';
