@@ -31,7 +31,7 @@ function App() {
     <div className="App">
       <div className="main-wrapper">
         <div>
-          <Progress />
+          <Progress originalTodos={state.originalTodos} />
         </div>
         <div>
           <div className="d-flex justify-space-between align-items-center">

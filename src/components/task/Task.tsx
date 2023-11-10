@@ -36,10 +36,10 @@ export default function Task(props: MyProps) {
 
   return (
     <>
-      <div className={`task-box ${completed && 'completed'}`}>
+      <div className={`task-box ${completed && 'completed'}`} data-testid={`task-${id}`}>
         <Checkbox checked={completed} onChange={toggleCompleteTask} />
         <p> {title} </p>
-        <div className="tools">
+        <div className="tools" data-testid={`task-tool-${id}`}>
           <DropdownTool
             onEdit={() => dispatch({ type: 'SET_TODO', payload: props.task })}
             onDelete={deleteTask}

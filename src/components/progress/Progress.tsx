@@ -1,27 +1,38 @@
 import './Progress.scss';
 import React from 'react';
-import { useTodo } from '../../contexts/TodoContext';
-export default function Progress() {
-  const { state } = useTodo();
-  const [progress, setProgress] = React.useState(0);
+import { TodoInterface } from '../../interfaces/todo.interface';
 
+interface MyProps {
+  originalTodos: TodoInterface[];
+}
+
+export default function Progress(props: MyProps) {
+  const [progress, setProgress] = React.useState(0);
+  const { originalTodos } = props;
   React.useEffect(() => {
-    const totalTasks = state?.originalTodos.length || 0;
-    const completedTasks = state?.originalTodos.filter((todo) => todo.completed)
-      .length;
+    const totalTasks = originalTodos.length || 0;
+    const completedTasks = originalTodos.filter(
+      (todo) => todo.completed,
+    ).length;
     const progressPercent =
       totalTasks > 0 ? (completedTasks / totalTasks) * 100 : 0;
     setProgress(progressPercent);
-  }, [state.originalTodos]);
+  }, [originalTodos]);
 
   return (
-    <section className="progress-box">
+    <section className="progress-box" data-testid={`progress-box`}>
       <h2>Progress</h2>
       <div className="progress-bar">
-        <div className="progress" style={{ width: `${progress}%` }} />
+        <div
+          className="progress"
+          data-testid={`progress`}
+          style={{ width: `${progress}%` }}
+        />
       </div>
-      <p>
-        {state?.originalTodos.filter((todo) => todo.completed).length} completed
+      <p data-testid={`progress-text`}>
+        {`${
+          originalTodos.filter((todo: TodoInterface) => todo.completed).length
+        } completed`}
       </p>
     </section>
   );

@@ -23,11 +23,9 @@ export default function AddTodo(props: MyProps) {
         placeholder="Add your todo..."
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        // onKeyDown={handleKeyDown}
       />
       {title?.length > 0 && (
         <button type={'button'} onClick={submitTask}>
-          {' '}
           Save
         </button>
       )}

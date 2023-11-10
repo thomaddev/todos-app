@@ -56,7 +56,7 @@ export default function Dropdown(props: MyProps) {
         <FontAwesomeIcon icon={open ? faAngleUp : faAngleDown} />
       </button>
       {open && (
-        <div className="menu">
+        <div className="menu" data-testid={'dropdown-menu'}>
           <ul>
             <li
               className={`menu-item ${filter === FILTER_ALL ? 'active' : ''}`}

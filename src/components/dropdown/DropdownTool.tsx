@@ -37,12 +37,12 @@ export default function DropdownTool(props: Myprops) {
 
   return (
     <div className="dropdown dropdown-tool" ref={dropdownRef}>
-      <FontAwesomeIcon icon={faEllipsis} onClick={handleOpen} />
+      <FontAwesomeIcon icon={faEllipsis} onClick={handleOpen} data-testid={'dropdown-tool-icon'} />
       {open && (
         <div className="menu">
           <ul>
             <li onClick={props.onEdit}>edit</li>
-            <li onClick={props.onDelete}>Delete</li>
+            <li onClick={props.onDelete}>delete</li>
           </ul>
         </div>
       )}

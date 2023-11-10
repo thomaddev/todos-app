@@ -20,7 +20,7 @@ type Action =
   | { type: 'TOGGLE_TODO'; payload: string }
   | { type: 'REMOVE_TODO'; payload: string };
 
-type TodoContextType = {
+export type TodoContextType = {
   state: State;
   dispatch: React.Dispatch<Action>;
   getTasks: () => Promise<void>;
@@ -163,4 +163,4 @@ const useTodo = () => {
   return context;
 };
 
-export { TodoProvider, useTodo };
+export { TodoProvider, useTodo, TodoContext };
