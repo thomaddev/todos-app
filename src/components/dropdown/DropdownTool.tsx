@@ -1,5 +1,5 @@
 import React from 'react';
-import './Dropdown.scss';
+import './dropdown.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 

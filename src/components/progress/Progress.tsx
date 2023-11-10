@@ -1,4 +1,4 @@
-import './Progress.scss';
+import './progress.scss';
 import React from 'react';
 import { TodoInterface } from '../../interfaces/todo.interface';
 

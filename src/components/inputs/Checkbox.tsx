@@ -1,5 +1,5 @@
 import React from 'react';
-import './AddTodo.scss';
+import './addTodo.scss';
 interface MyProps {
   checked: boolean;
   onChange: () => void;

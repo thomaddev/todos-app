@@ -1,5 +1,5 @@
 import React from 'react';
-import './AddTodo.scss';
+import './addTodo.scss';
 interface MyProps {
   onInputSubmit: (title: string) => void;
   title?: string;

@@ -1,6 +1,5 @@
 import React from 'react';
-import { TodoInterface } from '../../interfaces/todo.interface';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { TodoContext, TodoContextType } from '../../contexts/TodoContext';
 import Checkbox from './Checkbox';

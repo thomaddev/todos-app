@@ -1,5 +1,5 @@
 import React from 'react';
-import './Task.scss';
+import './task.scss';
 import DropdownTool from '../dropdown/DropdownTool';
 import { TodoInterface } from '../../interfaces/todo.interface';
 import { useTodo } from '../../contexts/TodoContext';
